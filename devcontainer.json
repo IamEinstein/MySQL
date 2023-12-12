@@ -1,8 +1,17 @@
 {
-    "name": "MySQL",
-    "image": "mysql:8.0",
-    "ports": ["3306"],
+    "name": "My Codespace",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:latest",
+    "ports": ["3306", "8000"],
     "env": {
-      "MYSQL_ROOT_PASSWORD": "your_password"
+      "MYSQL_ROOT_PASSWORD": "root"
+    },
+    "features": {
+      "mysql": {
+        "image": "mysql:8.0",
+        "mount": {
+          "source": "/data",
+          "target": "/var/lib/mysql"
+        }
+      }
     }
   }
